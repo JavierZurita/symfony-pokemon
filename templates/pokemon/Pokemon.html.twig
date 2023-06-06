@@ -1,0 +1,29 @@
+{% extends "pokemon/BasePokemon.html.twig" %}
+
+{% block contenido %}
+
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center"><h2>{{pokemon.nombre}} {{ pokemon.codigo }}</h2></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="{{pokemon.imagen}}">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">{{pokemon.descripcion}}</div>
+                        </div>
+                        <div class="row">
+                            <ul>
+                               {# DEBILIDADES #}
+                               {% for debilidad in pokemon.debilidades %}
+                                <li>{{debilidad.nombre}}</li>
+                               {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+{% endblock %} 
